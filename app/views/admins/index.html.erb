@@ -1,0 +1,12 @@
+<div class="col-sm-12">
+  <%= form_tag sessions_path(), method: :post, class: "form-inline" do %>
+    <label class="sr-only" for="inlineFormInput">Eamil</label>
+    <%= text_field_tag :email, nil, placeholder: "example@gems.in", class: "form-control" %>
+    <label class="sr-only" for="inlineFormInputGroup">Password</label>
+    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+      <div class="input-group-addon"></div>
+      <%= password_field_tag :password, nil, placeholder: "Your password", class: "form-control" %>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  <% end %>
+</div>
