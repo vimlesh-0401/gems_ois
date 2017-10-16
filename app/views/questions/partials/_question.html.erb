@@ -1,0 +1,17 @@
+<% question = @question if question.nil? %>
+<div class="question-<%=question.id%>">
+  <h3><%=question.content%></h3>
+  <div class="choices">
+    <ul>
+    <% question.choices.each do |choice| %>
+      <li><%=choice.content%></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="choice-form"></div>
+  <div>
+    <%= link_to "Add Choice", form_choices_path(question_id: question.id), method: :get, remote: true %>
+  </div>
+</div>
+
+

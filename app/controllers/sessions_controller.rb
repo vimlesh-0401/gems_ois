@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email], password: params[:password])
     if user.present?
       session[:user_id] = user.id
-      redirect_to admins_home_index_path()
+      redirect_to dashboard_admins_path()
     else
       redirect_to admins_path(), error: "Please Enter valid credentials"
     end

@@ -1,0 +1,25 @@
+<section class="content">
+  <div class="row">
+    <div class="col-sm-12">
+      <%=@test.name%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 t-question-list">
+    <% @test.questions.each do |que| %>
+      <%= render "/questions/partials/question", question: que%>
+    <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 t-question-new">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to "Add Question", form_questions_path(test_id: @test.id), method: :get, remote: true %>
+    </div>
+  </div>
+
+</section>
+

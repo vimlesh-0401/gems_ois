@@ -1,3 +1,3 @@
 class Test < ApplicationRecord
-  has_may :questions
+  has_many :questions, dependent: :destroy
 end

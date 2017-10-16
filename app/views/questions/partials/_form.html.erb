@@ -1,0 +1,11 @@
+<%= form_for @question, remote: true do |f| %>
+  <%= f.hidden_field :test_id %>
+  <label class="sr-only" for="inlineFormInput">Question</label>
+  <%= f.text_field :content, placeholder: "Test Name", class: "form-control" %>
+  <br/>
+  <label class="sr-only" for="inlineFormInput">Category</label>
+  <%= select("question", "category", [[ "Single Choice", 1],[ "Multi Choice", 2],[ "User Input", 3]], html: {class: "form-control"}) %><br/>
+  <label class="sr-only" for="inlineFormInput">Time Limit</label>
+  <%= f.text_field :timelimit, placeholder: "Time limit in seconds", class: "form-control" %><br/>
+  <button type="submit" class="btn btn-primary">Save</button>
+<% end %>
